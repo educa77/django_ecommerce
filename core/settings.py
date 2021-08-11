@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-o6vid7_*edt$dxuukv#d%1r1jz&%xc2goaf81*=r1)gf692*w*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['yourdomain.com', '127.0.0.1']
 
 
 # Application definition
@@ -64,7 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'store.views.categories',
+                'store.context_processors.categories',  # hace que esto este available en todas nuestras vistas
             ],
         },
     },
@@ -127,9 +127,9 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-""" STATICFILES_DIRS = [
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
-] """
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

@@ -64,7 +64,7 @@ class TestProductsModel(TestCase):
         """
         data = self.data1
         url = reverse('store:product_detail', args=[data.slug])
-        self.assertEqual(url, '/item/django-for-beginners/')
+        self.assertEqual(url, '/django-for-beginners/')
         response = self.client.post(
             reverse('store:product_detail', args=[data.slug]))
         self.assertEqual(response.status_code, 200)
