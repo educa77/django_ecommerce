@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_extensions',
     'store',
-    'basket'
+    'basket',
+    'account',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -144,3 +146,20 @@ INTERNAL_IPS = [
     '127.0.0.1',
     # ...
 ]
+
+# Basket session ID
+BASKET_SESSION_ID = 'basket'
+
+# Stripe Payment
+# PUBLISHABLE_KEY = ''
+# SECRET_KEY = ''
+# STRIPE_ENDPOINT_SECRET = ''
+# stripe listen --forward-to localhost:8000/payment/webhook/
+
+# Custom user model
+AUTH_USER_MODEL = 'account.UserBase'
+LOGIN_REDIRECT_URL = '/account/dashboard'
+LOGIN_URL = '/account/login/'
+
+# Email setting
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
