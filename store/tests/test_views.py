@@ -15,7 +15,7 @@ class TestViewResponses(TestCase):
     def setUp(self):
         self.c = Client()
         self.factory = RequestFactory()
-        User.objects.create(username='admin')
+        User.objects.create(email='a@a.com')
         Category.objects.create(name='django', slug='django')
         Product.objects.create(category_id=1, title='Django For Beginners', created_by_id=1,
                                slug='django-for-beginners', price='20.99', image='django_for_beginners')

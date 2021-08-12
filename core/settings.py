@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv, find_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'store',
     'basket',
     'account',
+    'payment',
     'orders'
 ]
 
@@ -150,11 +152,6 @@ INTERNAL_IPS = [
 # Basket session ID
 BASKET_SESSION_ID = 'basket'
 
-# Stripe Payment
-# PUBLISHABLE_KEY = ''
-# SECRET_KEY = ''
-# STRIPE_ENDPOINT_SECRET = ''
-# stripe listen --forward-to localhost:8000/payment/webhook/
 
 # Custom user model
 AUTH_USER_MODEL = 'account.UserBase'
@@ -163,3 +160,13 @@ LOGIN_URL = '/account/login/'
 
 # Email setting
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+load_dotenv(find_dotenv())
+
+
+# stripe listen --forward-to localhost:8000/payment/webhook/
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+PUBLISHABLE_KEY = os.environ.get("PUBLISHABLE_KEY")
+STRIPE_ENDPOINT_SECRET = os.environ.get("STRIPE_ENDPOINT_SECRET")

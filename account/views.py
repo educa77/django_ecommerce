@@ -74,8 +74,7 @@ def account_register(request):
 
 
 def account_activate(request, uidb64, token):
-    uid = force_text(urlsafe_base64_decode(uidb64))
-    user = UserBase.objects.get(pk=uid)
+
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = UserBase.objects.get(pk=uid)
