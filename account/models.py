@@ -1,4 +1,3 @@
-
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
                                         PermissionsMixin)
 from django.core.mail import send_mail
@@ -75,6 +74,5 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
             fail_silently=False,
         )
 
-
-def __str__(self):
-    return self.user_name
+    def __str__(self):
+        return self.user_name

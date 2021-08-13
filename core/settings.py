@@ -167,6 +167,6 @@ load_dotenv(find_dotenv())
 
 # stripe listen --forward-to localhost:8000/payment/webhook/
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-PUBLISHABLE_KEY = os.environ.get("PUBLISHABLE_KEY")
+STRIPE_SECRET_KEY = os.environ.get("SECRET_KEY")
+STRIPE_PUBLISHABLE_KEY = os.environ.get("PUBLISHABLE_KEY")
 STRIPE_ENDPOINT_SECRET = os.environ.get("STRIPE_ENDPOINT_SECRET")
